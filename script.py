@@ -2,13 +2,16 @@ import os
 import random 
 from subprocess import PIPE, Popen, STDOUT
 
-# with open(archivo, 'r') as file:
-#     file_content = file.read()
 
-# print(file_content)
 
 directorio = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'videos')
 capitulos_ya_vistos = []
+
+def obtenerCanalActual():
+  with open(archivo, 'r') as file:
+      file_content = file.read()
+
+  print(file_content)
 
 def obtenerCapituloRandom():
   carpetas = [nombre for nombre in os.listdir(directorio) if os.path.isdir(os.path.join(directorio, nombre))]
