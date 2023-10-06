@@ -1,7 +1,11 @@
 import os
 import random 
-import time
 from subprocess import PIPE, Popen, STDOUT
+
+# with open(archivo, 'r') as file:
+#     file_content = file.read()
+
+# print(file_content)
 
 directorio = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'videos')
 capitulos_ya_vistos = []
@@ -23,13 +27,11 @@ def obtenerComerciales():
   return comerciales_seleccionados
 
 def reproducirVideos():
-  print("------- Revision --------")
   global capitulos_ya_vistos
   encontrado = True
 
   while(encontrado):
     capitulo = obtenerCapituloRandom()
-    print(capitulo)
     if capitulo not in capitulos_ya_vistos:
       encontrado = False
 
